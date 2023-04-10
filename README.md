@@ -19,16 +19,16 @@ is no javascript executed - it's all done with CSS!
 
 # Overview
 
-CSS Lightbox initially displays a grid view of `img` elements: these can
-have various aspect ratios and are laid out using a CSS flexbox so that
-the page is completely responsive.
+CSS Lightbox initially displays a gallery view of `img` elements: these can
+have various aspect ratios and are laid out in a grid using a CSS flexbox so 
+that the page is completely responsive.
 
 The height of each grid image is determined by the variable
 `--gallery-img-size` in `lightbox.css`.  (There are many other
 variables in that CSS file that you can modify to determine the look and
 feel of the gallery and its lightbox.)
 
-Each grid item in `lightbox.html` is represented as, e.g.,
+Each gallery item in `lightbox.html` is represented as, e.g.,
 
 ```
 <li class="gallery-item">
@@ -52,9 +52,9 @@ same image:
   <a href="#lightbox-item-43" class="link btn-next">&gt;</a>
 </div>
 ```
-The lightbox element is displayed large when the gallery item is clicked on,
-and it works for different aspect ratios.
+The lightbox element is displayed large when the gallery item is clicked on.
 Click on lightbox element and you return to the gallery view.
+The lightbox is also responsive and respects the image's aspect ratio.
 
 Each lightbox element is identified by an `id`, e.g., `lightbox-item-42` above.
 The lightbox element features navigation arrows to go the previous and next

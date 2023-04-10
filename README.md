@@ -114,11 +114,11 @@ This is a matter of taste but something between 95-100% should work.
 There are of course other CSS rules you can play with, but the above are the
 important ones.  
 
-# Lots of images?
+# Lots of images?  Use PHP!
 
 Entering HTML code for a bunch of images can be tedious so it is easier
 to let a PHP script generate the HTML code for you, based on a list of images.
-A sample program, `lightbox.php` is provided in the repository.  It uses
+A sample program, `lightbox.php`, is provided in the repository.  It uses
 two arrays, `$imgs` and `$captions`, to list the image addresses and their
 captions, respectively.  There is also a boolean flag `$wraparound` which
 determines if the previous/next buttons should wrap around or stay when
@@ -126,6 +126,8 @@ the users clicks previous on the first image, or next on the last image.
 
 # Credits
 
-This project is loosely based on Kevin Powell's CSS lightbox project
+This project is loosely based on Kevin Powell's CSS lightbox tutorial
 [https://www.youtube.com/watch?v=6j5q-hP8sfk]
-where I discovered the `:target` pseudo class.
+where I discovered the `:target` pseudo class which is key to 
+making this work without javascript.
+Also thanks to Jørgen Brandt for valuable feedback.

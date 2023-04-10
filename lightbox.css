@@ -33,7 +33,7 @@
     --lightbox-text-transform: uppercase;    
     --lightbox-letter-spacing: 1px;
     --lightroom-z-index: 99999;
-    --lightbox-cover: 95%;   /* can be 100% if you want lightbox to go to the edge */
+    --lightbox-cover: 95%;   /* can be 100% if you want lightbox image larger */
     --lightbox-fudge: 10em;  /* gives some space around the lighbox */
 }
 

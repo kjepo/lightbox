@@ -1,0 +1,168 @@
+/**
+  *
+  * CSS gallery v1 (C) Kjell Post kjell@irstafoto.se
+  * Use it, abuse it, but don't pretend you wrote it
+  *
+  */
+
+/* Import your font(s) here */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:300,700');
+
+/**
+  * The following variables defines size, colour, fonts
+  * and various parameters for the gallery and lightbox
+  *
+  */
+
+:root {
+    --gallery-img-size: 200px;
+    --gallery-bg-color: rgba(0, 0, 0, 0);
+    --gallery-font-family: 'Roboto Condensed', sans-serif;
+    --gallery-font-weight: 300;
+    --gallery-font-size: clamp(1rem, 0.9vw, 2rem);
+    --gallery-text-color: gray;
+    --gallery-text-transform: uppercase;
+    --gallery-caption-height: 2em; /* can be auto but with some fonts you need a constant */
+
+    --lightbox-font-family: 'Roboto Condensed', sans-serif;
+    --lightbox-font-weight: 400;
+    --lightbox-font-size: clamp(0.7rem, 1.5vw, 1.5rem);
+    --lightbox-bg-color: rgba(0, 0, 0, 0.9);
+    --lightbox-caption-bg-color: rgba(0, 0, 0, 0);
+    --lightbox-caption-text-color: lightgray;
+    --lightbox-text-transform: uppercase;    
+    --lightbox-letter-spacing: 1px;
+    --lightroom-z-index: 99999;
+    --lightbox-cover: 95%;   /* can be 100% if you want lightbox to go to the edge */
+    --lightbox-fudge: 10em;  /* gives some space around the lighbox */
+}
+
+/* You may not the following for body if you are embedding the gallery somewhere */ 
+body {
+    position: relative;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery {
+    font-family: var(--gallery-font-family);
+    font-weight: var(--gallery-font-weight);
+    width: 100vw;
+    scroll-behavior: smooth;
+    background: var(--gallery-bg-color);
+}
+
+a.link {
+    text-decoration: none;
+    color: var(--gallery-text-color);
+}
+
+ul.gallery-main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+li.gallery-item {
+    flex-grow: 1;
+    list-style-type: none;
+}
+
+figure.photo {
+    margin: 1em;
+    align-items: center;
+    justify-content: center;
+}
+
+.thumb {
+    height: var(--gallery-img-size);
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    filter:
+	drop-shadow(0 -1px 0 gray)
+	drop-shadow(0 1px 0 gray)
+	drop-shadow(-1px 0 0 gray)
+	drop-shadow(1px 0 0 gray);
+}
+
+figcaption.caption {
+    font-size: var(--gallery-font-size);
+    color: var(--gallery-text-color);
+    text-transform: var(--gallery-text-transform);
+    text-align: center;
+    padding-top: 0.5em;
+    height: var(--gallery-caption-height);
+}
+
+.lightbox {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    background: var(--lightbox-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0,1);
+    transition: transform 150ms ease-in-out;
+    transform-origin: right;
+    z-index: var(--lightroom-z-index);
+}
+
+.lightbox:target {
+    transform: scale(1,1);
+    transform-origin: left;
+}
+
+.lightbox-img {
+    max-width: var(--lightbox-cover);
+    max-height: var(--lightbox-cover);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid gray;
+}
+
+.lightbox-caption {
+    font-family: var(--lightbox-font-family);
+    font-weight: var(--lightbox-font-weight);
+    font-size: var(--lightbox-font-size);
+    letter-spacing: var(--lightbox-letter-spacing);
+    text-transform: var(--lightbox-text-transform);
+    text-align: center;	
+    background: var(--lightbox-caption-bg-color);
+    color: var(--lightbox-caption-text-color);
+    padding: .3em;
+    margin: 0.1em;		/* must be > 0 or caption overlaps lightbox border */
+}
+
+.lightbox-content {
+    max-height: calc(100% - var(--lightbox-fudge));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.btn-prev, .btn-next {
+    font-size: 3em;
+    font-family: "Arial", sans-serif;
+    font-weight: 100;
+    padding-left, padding-right: 0.5em;
+    position: fixed;
+    bottom: 5%;
+    color: white;
+}
+
+.btn-prev {
+    left: 5%;
+}
+
+.btn-next {
+    right: 5%;
+}

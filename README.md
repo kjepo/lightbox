@@ -115,10 +115,14 @@ important ones.
 
 # Lots of images?
 
-Entering HTML code for a bunch of images can be tedious so it may be easier
+Entering HTML code for a bunch of images can be tedious so it is easier
 to let a PHP script generate the HTML code for you, based on a list of images.
 
-(To be continued.)
+A sample program, `lightbox.php` is provided in this repository.  It uses
+two arrays, `$imgs` and `$captions`, to list the image addresses and their
+captions, respectively.  There is also a boolean flag `$wraparound` which
+determines if the previous/next buttons should wrap around or stay when
+the users clicks previous on the first image, or next on the last image.
 
 # Credits
 

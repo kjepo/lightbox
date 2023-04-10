@@ -4,11 +4,18 @@ CSS Lightbox is a photo gallery with a "lightbox" feature, completely
 written in only HTML and CSS.  It is blindlingly fast because there
 is no javascript executed - it's all done with CSS!
 
-This project is loosely based on Kevin Powell's CSS lightbox project
-[https://www.youtube.com/watch?v=6j5q-hP8sfk]
-where I discovered the `:target` pseudo class.
+**Demo:** [http://kjellpost.com/git/lightbox/lightbox.html]
 
-[http://kjellpost.com/git/lightbox/lightbox.html]
+
+
+| ![lightbox-1.png](http://kjellpost.com/git/lightbox/lightbox-1.png) | 
+|:--:| 
+| *Gallery view* |
+
+| ![lightbox-2.png](http://kjellpost.com/git/lightbox/lightbox-2.png) | 
+|:--:| 
+| *Lightbox view* |
+
 
 # Overview
 
@@ -112,4 +119,10 @@ Entering HTML code for a bunch of images can be tedious so it may be easier
 to let a PHP script generate the HTML code for you, based on a list of images.
 
 (To be continued.)
+
+# Credits
+
+This project is loosely based on Kevin Powell's CSS lightbox project
+[https://www.youtube.com/watch?v=6j5q-hP8sfk]
+where I discovered the `:target` pseudo class.
 

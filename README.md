@@ -1,12 +1,10 @@
 # CSS Lightbox
 
-CSS Lightbox is a photo gallery with a "lightbox" feature, completely
+CSS Lightbox is a photo gallery with a "lightbox" feature,
 written in only HTML and CSS.  It is blindlingly fast because there
 is no javascript executed - it's all done with CSS!
 
-**Demo:** [http://kjellpost.com/git/lightbox/lightbox.html]
-
-
+**Demo:** http://kjellpost.com/git/lightbox/lightbox.html
 
 | ![lightbox-1.png](http://kjellpost.com/git/lightbox/lightbox-1.png) | 
 |:--:| 
@@ -16,17 +14,16 @@ is no javascript executed - it's all done with CSS!
 |:--:| 
 | *Lightbox view* |
 
-
 # Overview
 
 CSS Lightbox initially displays a gallery view of `img` elements: these can
 have various aspect ratios and are laid out in a grid using a CSS flexbox so 
-that the page is completely responsive.
+that the gallery page is completely responsive.
 
 The height of each grid image is determined by the variable
 `--gallery-img-size` in `lightbox.css`.  (There are many other
 variables in that CSS file that you can modify to determine the look and
-feel of the gallery and its lightbox.)
+feel of the gallery and its lightbox, see section "Variables" further down.)
 
 Each gallery item in `lightbox.html` is represented as, e.g.,
 
@@ -40,6 +37,7 @@ Each gallery item in `lightbox.html` is represented as, e.g.,
   </figure>
 </li>
 ```
+
 Further down in the HTML there is a corresponding lightbox for that
 same image:
 ```
@@ -52,9 +50,10 @@ same image:
   <a href="#lightbox-item-43" class="link btn-next">&gt;</a>
 </div>
 ```
-The lightbox element is displayed large when the gallery item is clicked on.
-Click on lightbox element and you return to the gallery view.
+
+When a gallery element is clicked, the corresponding lightbox element is shown.
 The lightbox is also responsive and respects the image's aspect ratio.
+Click on lightbox element and you return to the gallery view.
 
 Each lightbox element is identified by an `id`, e.g., `lightbox-item-42` above.
 The lightbox element features navigation arrows to go the previous and next
@@ -64,12 +63,12 @@ stay on the first/last image.
 
 You can have different captions for the gallery and the lightbox item
 and also different `img`-elements, if you prefer. The benefit of using the
-same `img` `src` is that the lightbox appears instantenously and makes for
+same `img` source is that the lightbox appears instantenously and makes for
 a snappier experience.  The drawback is that it takes longer time to load
 the gallery.  If you use thumbnail versions for the gallery, they load faster
-but then the user may have to wait a little for the lightbox image to load.
+but then the user may have to wait a little for the larger lightbox image to load.
 
-# Details
+# Variables
 
 The CSS file `lightbox.css` contains a set of variables in the `:root`
 rule that dictates the look and feel of the gallery and lightbox.
@@ -106,19 +105,20 @@ Then for the lightbox:
 - `--lightroom-z-index` is the lightbox's z-index.  A value of 10 would probably
 suffice but if you have, e.g., a sticky header and you don't want that to show,
 then 99999 would probably trump that.
+- `--lightbox-padding` is the padding for the lightbox image: if zero, the image may
+extend to the browser's edge so the default value provides a bit of padding.
 - `--lightbox-cover` tells the browser how large the lightbox image should be.
 This is a matter of taste but something between 95-100% should work.
 - `--lightbox-fudge: 10em` gives some space around the lighbox.
 
-There are of course other CSS rules you can play with but the above are the
-important ones.
+There are of course other CSS rules you can play with, but the above are the
+important ones.  
 
 # Lots of images?
 
 Entering HTML code for a bunch of images can be tedious so it is easier
 to let a PHP script generate the HTML code for you, based on a list of images.
-
-A sample program, `lightbox.php` is provided in this repository.  It uses
+A sample program, `lightbox.php` is provided in the repository.  It uses
 two arrays, `$imgs` and `$captions`, to list the image addresses and their
 captions, respectively.  There is also a boolean flag `$wraparound` which
 determines if the previous/next buttons should wrap around or stay when
@@ -129,4 +129,3 @@ the users clicks previous on the first image, or next on the last image.
 This project is loosely based on Kevin Powell's CSS lightbox project
 [https://www.youtube.com/watch?v=6j5q-hP8sfk]
 where I discovered the `:target` pseudo class.
-

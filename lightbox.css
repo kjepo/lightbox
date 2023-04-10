@@ -33,8 +33,9 @@
     --lightbox-text-transform: uppercase;    
     --lightbox-letter-spacing: 1px;
     --lightroom-z-index: 99999;
-    --lightbox-cover: 95%;   /* can be 100% if you want lightbox image larger */
-    --lightbox-fudge: 10em;  /* gives some space around the lighbox */
+    --lightbox-padding: .3em; /* minimum padding for the img */
+    --lightbox-cover: 95%;    /* can be 100% if you want lightbox image larger */
+    --lightbox-fudge: 10em;   /* gives some space around the lighbox */
 }
 
 /* You may not the following for body if you are embedding the gallery somewhere */ 
@@ -138,7 +139,7 @@ figcaption.caption {
     text-align: center;	
     background: var(--lightbox-caption-bg-color);
     color: var(--lightbox-caption-text-color);
-    padding: .3em;
+    padding: var(--lightbox-padding);
     margin: 0.1em;		/* must be > 0 or caption overlaps lightbox border */
 }
 

@@ -130,4 +130,4 @@ This project is loosely based on Kevin Powell's CSS lightbox tutorial
 [https://www.youtube.com/watch?v=6j5q-hP8sfk]
 where I discovered the `:target` pseudo class which is key to 
 making this work without javascript.
-Also thanks to Jørgen Brandt for valuable feedback.
+Also thanks to Jørgen Brandt and Tommy Hallgren for valuable feedback.

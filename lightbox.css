@@ -38,13 +38,13 @@
     --lightbox-fudge: 10em;   /* gives some space around the lighbox */
 }
 
+
+/* You may not want the following for * and body if you are embedding the gallery somewhere */ 
 * {
     margin: 0;
     padding: 0;
 }
     
-
-/* You may not the following for body if you are embedding the gallery somewhere */ 
 body {
     position: relative;
     overflow-x: hidden;

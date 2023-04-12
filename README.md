@@ -68,6 +68,17 @@ a snappier experience.  The drawback is that it takes longer time to load
 the gallery.  If you use thumbnail versions for the gallery, they load faster
 but then the user may have to wait a little for the larger lightbox image to load.
 
+**Caveat:** I have occasionally seen a rendering problem where the lightbox image is
+not loaded/rendered or rendered at the incorrect size.  If this happens,
+try using different gallery and lightbox images, either by using thumbnails for
+the gallery and larger images for the lightbox or simply adding `?v=2` to the end
+of the lightbox `img` src, e.g.,
+
+```
+    <img class="lightbox-img" src="http://example.com/image.jpg?v=2" />
+```
+
+
 # Variables
 
 The CSS file `lightbox.css` contains a set of variables in the `:root`
